@@ -1,0 +1,206 @@
+:root {
+  color-scheme: light;
+  --rf-bg: #efe6d8;
+  --rf-panel: rgba(255, 248, 238, 0.82);
+  --rf-panel-strong: rgba(255, 252, 247, 0.92);
+  --rf-line: rgba(109, 88, 62, 0.16);
+  --rf-ink: #1f1a14;
+  --rf-muted: #6f6456;
+  --rf-brand: #1f6b63;
+  --rf-brand-2: #d9824f;
+  --rf-brand-deep: #23445b;
+  --rf-success: #3d7a57;
+  --rf-warn: #bc7a22;
+  --rf-danger: #ba5b3a;
+  --rf-shadow: 0 28px 90px -34px rgba(54, 35, 16, 0.34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--rf-ink);
+  background:
+    radial-gradient(circle at top left, rgba(31, 107, 99, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(217, 130, 79, 0.2), transparent 30%),
+    linear-gradient(180deg, #faf5ec 0%, #efe5d7 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.34), transparent 85%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.rf-shell {
+  position: relative;
+}
+
+.rf-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(31, 107, 99, 0.09), transparent 20%),
+    radial-gradient(circle at 85% 10%, rgba(217, 130, 79, 0.16), transparent 16%);
+}
+
+.rf-glass {
+  background: var(--rf-panel);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid var(--rf-line);
+  box-shadow: var(--rf-shadow);
+}
+
+.rf-glass-strong {
+  background: var(--rf-panel-strong);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--rf-line);
+  box-shadow: var(--rf-shadow);
+}
+
+@keyframes rfFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes rfFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes rfPulseSoft {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(19, 93, 102, 0.14);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(19, 93, 102, 0);
+  }
+}
+
+.rf-animate-enter {
+  animation: rfFadeUp 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rf-animate-float {
+  animation: rfFloat 5.2s ease-in-out infinite;
+}
+
+.rf-pulse-soft {
+  animation: rfPulseSoft 2.8s ease-in-out infinite;
+}
+
+.rf-hover-lift {
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+
+.rf-hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 64px -36px rgba(50, 35, 20, 0.48);
+}
+
+.rf-notification-panel {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 5rem;
+  width: auto;
+  max-width: 400px;
+  z-index: 120;
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .rf-notification-panel {
+    left: 304px;
+    right: auto;
+    bottom: auto;
+    top: 1.25rem;
+    width: 360px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rf-notification-panel {
+    left: 338px;
+    top: 1.5rem;
+    width: 380px;
+  }
+}
+
+.rf-gradient-text {
+  background: linear-gradient(135deg, var(--rf-brand-deep) 0%, var(--rf-brand-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.rf-chip {
+  border: 1px solid rgba(129, 106, 72, 0.16);
+  background: rgba(255, 255, 255, 0.66);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.rf-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(19, 93, 102, 0.35) transparent;
+}
+
+.rf-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.rf-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.rf-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(19, 93, 102, 0.3);
+  border-radius: 999px;
+}
+
+.roadfix-map-popup .maplibregl-popup-content {
+  border-radius: 18px;
+  border: 1px solid rgba(129, 106, 72, 0.16);
+  box-shadow: 0 20px 60px -24px rgba(31, 20, 8, 0.45);
+}

@@ -1,0 +1,8 @@
+{
+  "name": "RoadFix India",
+  "description": "A citizen-led road maintenance reporting platform powered by AI. Snap a photo of a pothole, let Gemini analyze the severity, and report it directly to authorities.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
