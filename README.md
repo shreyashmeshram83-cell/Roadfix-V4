@@ -12,7 +12,7 @@ RoadFix V4 is a full-stack civic reporting platform that allows citizens to repo
 - Notifications for updates and resolution
 - Admin dashboard for moderation and workflow control
 - Repair proof image upload for resolved complaints
-- Responsive UI for desktop and mobile
+- Responsive UI for the desktop and mobile
 
 ## Tech Stack
 
